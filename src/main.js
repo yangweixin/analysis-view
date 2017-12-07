@@ -4,6 +4,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+import api from './config/api'
+Vue.protoType.$api = api
 //引用入口文件
 import App from './App'
 //引用路由配置文件
@@ -16,7 +18,6 @@ Vue.prototype.$api = api
 const router = new VueRouter({
 	routes
 })
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
