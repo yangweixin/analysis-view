@@ -8,6 +8,10 @@ Vue.use(VueRouter)
 import App from './App'
 //引用路由配置文件
 import routes from './config/routes'
+//引用api文件
+import api from './config/api'
+//将API方法绑定到全局
+Vue.prototype.$api = api
 //使用配置文件规则
 const router = new VueRouter({
 	routes

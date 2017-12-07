@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div>
     <h1 class="logo">cnodejs Api Test</h1>
     <ul class="list">
@@ -17,6 +17,21 @@ export default {
         id:2,
         title:"test title 2"
       }]
+    }
+  },
+  created() {
+    this.get_data()
+  },
+  methods: {
+    get_data: function(params) {
+      var v = this
+      if(!params) {
+        params = {}
+      }
+
+      v.$api.get('topics', params, function(r){
+        v.lists = r.data
+      })
     }
   }
 }
